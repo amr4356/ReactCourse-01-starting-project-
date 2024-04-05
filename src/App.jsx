@@ -1,4 +1,5 @@
 import reactImg from './assets/react-core-concepts.png';
+import componentsImg from './assets/components.png';
 
 const reactDescriotions=["Fundamental",'Crucial','Core'];
 function genRandoInt(max){
@@ -20,14 +21,36 @@ function Header(){
   );
 }
 
+function CorConcept(props){
+  return (
+    <li>
+      <img src={props.image} alt={props.title} />
+      <h3>{props.title}</h3>
+      <p>{props.description}</p>
+    </li>
+  );
+}
+
 function App() {
   return (
     <div>
       <Header />
       <main>
-        <h2>Time to get started!</h2>
+        <section id="core-concepts">
+          <h2>Core Concepts</h2>
+          <ul>
+            <CorConcept 
+              title="Components" 
+              description="The core UI building block."
+              image={componentsImg}
+            />
+            <CorConcept/>
+            <CorConcept/>
+            <CorConcept/>
+          </ul>
+        </section>
+        
       </main>
-
     </div>
   );
 }
