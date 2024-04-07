@@ -5,10 +5,14 @@ import TabButton from './components/TabButton.jsx';
 
 
 function App() {
+  let tabContent='Please click a button';
   function handleSelect(selectedButton){
     // selected button => 'components', 'jsx'....
-    console.log(selectedButton);
+    tabContent=selectedButton;
+    console.log(tabContent);
   }
+
+  console.log('App Component Executing');
 
 
   return (
@@ -44,7 +48,7 @@ function App() {
             <TabButton onSelect={() => handleSelect('props')}>Props</TabButton>
             <TabButton onSelect={() => handleSelect('state')}>State</TabButton>
           </menu>
-          Dynamic Content
+          {tabContent}
         </section>
         
       </main>
